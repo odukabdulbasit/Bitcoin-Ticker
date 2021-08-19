@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="loginEditTextStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/loginEdidtextsHeigth</item>
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+    </style>
+</resources>

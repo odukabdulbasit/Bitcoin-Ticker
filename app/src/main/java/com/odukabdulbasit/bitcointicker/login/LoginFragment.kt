@@ -1,4 +1,4 @@
-package com.odukabdulbasit.bitcointicker
+package com.odukabdulbasit.bitcointicker.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
