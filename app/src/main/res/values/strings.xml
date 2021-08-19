@@ -6,4 +6,5 @@
     <string name="emailEditText">Email</string>
     <string name="passwordEditText">Password</string>
     <string name="registerTextViewText"><u>Register</u></string>
+    <string name="registerbutontext">Register</string>
 </resources>

@@ -1,14 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RegisterFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".RegisterFragment">
 
-</FrameLayout>
+        <!-- TODO: Update blank fragment layout -->
+
+
+        <EditText
+            android:id="@+id/registerEmailAddressEditText"
+            style="@style/loginEditTextStyle"
+            android:layout_marginTop="220dp"
+            android:background="@drawable/loginedittextbacround"
+            android:hint="@string/emailEditText"
+            android:inputType="textEmailAddress"
+            android:padding="@dimen/emailPading"
+            android:paddingStart="@dimen/emailStartPading"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/registerPasswordEditText"
+            style="@style/loginEditTextStyle"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/loginedittextbacround"
+            android:hint="@string/passwordEditText"
+            android:inputType="textPassword"
+            android:padding="@dimen/emailPading"
+            android:paddingStart="@dimen/emailStartPading"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/registerEmailAddressEditText" />
+
+        <Button
+            android:id="@+id/registerButton"
+            style="@style/loginEditTextStyle"
+            android:layout_marginTop="24dp"
+            android:text="@string/registerbutontext"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/registerPasswordEditText" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

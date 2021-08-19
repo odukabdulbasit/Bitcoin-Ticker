@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.odukabdulbasit.bitcointicker.R
 import com.odukabdulbasit.bitcointicker.databinding.FragmentLoginBinding
 
 
@@ -39,7 +40,10 @@ class LoginFragment : Fragment() {
 
         viewModel.goToRegister.observe(this.viewLifecycleOwner, Observer { navigateToRegister ->
             if (navigateToRegister == true){
-                //navigate to register with nawController
+                //navigate to register
+                findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+
+                viewModel.onNavigatedToRegisterCompleted()
             }
         })
 
