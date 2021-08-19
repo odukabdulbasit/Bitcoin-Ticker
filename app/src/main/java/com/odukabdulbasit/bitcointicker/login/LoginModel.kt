@@ -1,3 +1,6 @@
 package com.odukabdulbasit.bitcointicker.login
 
-class LoginModel(val Email : String = "", val Password : String = "" )
+
+
+
+data class LoginModel(var Email : String = "", var Password : String = "" )
