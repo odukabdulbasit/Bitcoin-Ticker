@@ -5,5 +5,5 @@
     <dimen name="emailPading">5dp</dimen>
     <dimen name="emailStartPading">10dp</dimen>
     <dimen name="registeerTextViewPadding">10dp</dimen>
-    <dimen name="registerTextViewTextSize">16dp</dimen>
+    <dimen name="registerTextViewTextSize">18dp</dimen>
 </resources>

@@ -5,5 +5,5 @@
     <string name="loginbuton">Log In</string>
     <string name="emailEditText">Email</string>
     <string name="passwordEditText">Password</string>
-    <string name="registerTextViewText">Register</string>
+    <string name="registerTextViewText"><u>Register</u></string>
 </resources>

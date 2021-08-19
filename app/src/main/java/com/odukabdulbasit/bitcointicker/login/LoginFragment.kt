@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.odukabdulbasit.bitcointicker.databinding.FragmentLoginBinding
 
 
@@ -31,8 +34,14 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding = FragmentLoginBinding.inflate(inflater)
 
-        binding.loginModel = LoginModel()//loginModel
+        binding.loginModel = LoginModel()
         binding.loginViewModel = viewModel
+
+        viewModel.goToRegister.observe(this.viewLifecycleOwner, Observer { navigateToRegister ->
+            if (navigateToRegister == true){
+                //navigate to register with nawController
+            }
+        })
 
         return binding.root
     }
