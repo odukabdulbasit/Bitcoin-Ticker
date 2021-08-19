@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="loginEdidtextsHeigth">55dp</dimen>
-    <dimen name="logiButtonHeight" >55dp</dimen>
+    <dimen name="loginEdidtextsHeigth">56dp</dimen>
+    <dimen name="loginButtonHeight" >55dp</dimen>
+    <dimen name="emailPading">5dp</dimen>
+    <dimen name="emailStartPading">10dp</dimen>
+    <dimen name="registeerTextViewPadding">10dp</dimen>
+    <dimen name="registerTextViewTextSize">16dp</dimen>
 </resources>
