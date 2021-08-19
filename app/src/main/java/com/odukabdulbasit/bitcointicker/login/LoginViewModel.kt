@@ -4,6 +4,8 @@ import android.app.Application
 import android.content.ContentValues.TAG
 import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
@@ -14,6 +16,13 @@ class LoginViewModel(val application: Application) : ViewModel() {
         FirebaseAuth.getInstance()
     }
 
+    private val _goToRegister = MutableLiveData<Boolean>()
+    val goToRegister: LiveData<Boolean>
+        get() = _goToRegister
+
+    init {
+        _goToRegister.value = false
+    }
     //login to firebase current user with email and password
     fun login(email: String , password: String){
         if (!email.isNullOrEmpty() && !password.isNullOrEmpty()){
@@ -34,6 +43,16 @@ class LoginViewModel(val application: Application) : ViewModel() {
             Toast.makeText(application, "Lütfen gerekli alanları doldurunuz", Toast.LENGTH_LONG).show()
         }
 
+    }
+
+    fun goToRegister(){
+
+        _goToRegister.value = true
+    }
+
+    fun onNavigatedToRegisterCompleted(){
+
+        _goToRegister.value = false
     }
 
 
