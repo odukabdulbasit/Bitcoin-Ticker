@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/listSearchFragment"
-        android:name="com.odukabdulbasit.bitcointicker.ListSearchFragment"
+        android:name="com.odukabdulbasit.bitcointicker.listsearch.ListSearchFragment"
         android:label="fragment_list_search"
         tools:layout="@layout/fragment_list_search" >
         <action
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.odukabdulbasit.bitcointicker.DetailFragment"
+        android:name="com.odukabdulbasit.bitcointicker.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />
 </navigation>

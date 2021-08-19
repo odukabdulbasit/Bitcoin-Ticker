@@ -1,10 +1,11 @@
-package com.odukabdulbasit.bitcointicker
+package com.odukabdulbasit.bitcointicker.listsearch
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.odukabdulbasit.bitcointicker.R
 
 class ListSearchFragment : Fragment() {
 
