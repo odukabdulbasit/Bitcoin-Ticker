@@ -1,4 +1,4 @@
-package com.odukabdulbasit.bitcointicker.login
+package com.odukabdulbasit.bitcointicker.login.loginregistermodels
 
 import android.app.Application
 import android.content.ContentValues.TAG
@@ -57,6 +57,7 @@ class LoginViewModel(val application: Application) : ViewModel() {
 
     fun loginAndGoToList(email: String , password: String){
 
+        Log.i("Register", "register tiklandi")
         firebaseAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {

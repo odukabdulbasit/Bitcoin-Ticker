@@ -1,16 +1,17 @@
-package com.odukabdulbasit.bitcointicker.login
+package com.odukabdulbasit.bitcointicker.login.loginregisterui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.odukabdulbasit.bitcointicker.R
 import com.odukabdulbasit.bitcointicker.databinding.FragmentLoginBinding
+import com.odukabdulbasit.bitcointicker.login.loginregistermodels.LoginModel
+import com.odukabdulbasit.bitcointicker.login.loginregistermodels.LoginViewModel
 
 
 class LoginFragment : Fragment() {

@@ -6,17 +6,17 @@
     <data>
         <variable
             name="loginModel"
-            type="com.odukabdulbasit.bitcointicker.login.LoginModel" />
+            type="com.odukabdulbasit.bitcointicker.login.loginregistermodels.LoginModel" />
 
         <variable
             name="loginViewModel"
-            type="com.odukabdulbasit.bitcointicker.login.LoginViewModel" />
+            type="com.odukabdulbasit.bitcointicker.login.loginregistermodels.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".login.LoginFragment">
+        tools:context=".login.loginregisterui.LoginFragment">
 
         <!-- TODO: Update blank fragment layout -->
 

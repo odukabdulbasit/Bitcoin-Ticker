@@ -1,4 +1,4 @@
-package com.odukabdulbasit.bitcointicker.login
+package com.odukabdulbasit.bitcointicker.login.loginregistermodels
 
 
 

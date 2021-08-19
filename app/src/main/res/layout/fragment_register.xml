@@ -4,13 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="registerModel"
+            type="com.odukabdulbasit.bitcointicker.login.loginregistermodels.LoginModel" />
 
+        <variable
+            name="registerViewModel"
+            type="com.odukabdulbasit.bitcointicker.login.loginregistermodels.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".register.RegisterFragment">
+        tools:context=".login.loginregisterui.RegisterFragment">
 
         <!-- TODO: Update blank fragment layout -->
 
@@ -21,6 +27,7 @@
             android:layout_marginTop="220dp"
             android:background="@drawable/loginedittextbacround"
             android:hint="@string/emailEditText"
+            android:text="@={registerModel.email}"
             android:inputType="textEmailAddress"
             android:padding="@dimen/emailPading"
             android:paddingStart="@dimen/emailStartPading"
@@ -35,6 +42,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/loginedittextbacround"
             android:hint="@string/passwordEditText"
+            android:text="@={registerModel.password}"
             android:inputType="textPassword"
             android:padding="@dimen/emailPading"
             android:paddingStart="@dimen/emailStartPading"
@@ -48,6 +56,7 @@
             style="@style/loginEditTextStyle"
             android:layout_marginTop="24dp"
             android:text="@string/registerbutontext"
+            android:onClick="@{() -> registerViewModel.loginAndGoToList(registerModel.email, registerModel.password)}"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
