@@ -4,7 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="loginModel"
+            type="com.odukabdulbasit.bitcointicker.login.LoginModel" />
 
+        <variable
+            name="loginViewModel"
+            type="com.odukabdulbasit.bitcointicker.login.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +25,12 @@
             android:id="@+id/editTextTextEmailAddress"
             style="@style/loginEditTextStyle"
             android:layout_marginTop="220dp"
+            android:background="@drawable/loginedittextbacround"
+            android:hint="@string/emailEditText"
             android:inputType="textEmailAddress"
+            android:padding="@dimen/emailPading"
+            android:paddingStart="@dimen/emailStartPading"
+            android:text="@{loginModel.email}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +40,12 @@
             android:id="@+id/editTextTextEmailAddress2"
             style="@style/loginEditTextStyle"
             android:layout_marginTop="16dp"
+            android:background="@drawable/loginedittextbacround"
+            android:hint="@string/passwordEditText"
             android:inputType="textPassword"
+            android:padding="@dimen/emailPading"
+            android:paddingStart="@dimen/emailStartPading"
+            android:text="@{loginModel.password}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,6 +55,7 @@
             android:id="@+id/button"
             style="@style/loginEditTextStyle"
             android:layout_marginTop="24dp"
+            android:onClick="@{() -> loginViewModel.login()}"
             android:text="@string/loginbuton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,12 +65,14 @@
             android:id="@+id/registerTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="240dp"
-            android:text="Register"
+            android:layout_marginBottom="32dp"
+            android:padding="@dimen/registeerTextViewPadding"
+            android:text="@string/registerTextViewText"
+            android:textSize="@dimen/registerTextViewTextSize"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
