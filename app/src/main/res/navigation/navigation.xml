@@ -12,10 +12,31 @@
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_listSearchFragment"
+            app:destination="@id/listSearchFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.odukabdulbasit.bitcointicker.login.loginregisterui.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_listSearchFragment"
+            app:destination="@id/listSearchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listSearchFragment"
+        android:name="com.odukabdulbasit.bitcointicker.ListSearchFragment"
+        android:label="fragment_list_search"
+        tools:layout="@layout/fragment_list_search" >
+        <action
+            android:id="@+id/action_listSearchFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.odukabdulbasit.bitcointicker.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
 </navigation>

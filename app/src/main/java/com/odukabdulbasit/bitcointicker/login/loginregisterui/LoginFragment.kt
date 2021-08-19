@@ -21,7 +21,6 @@ class LoginFragment : Fragment() {
         ViewModelProvider(this, LoginViewModel.Factory(activity.application)).get(LoginViewModel::class.java)
     }
 
-   // val loginModel = LoginModel("","")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,6 +48,12 @@ class LoginFragment : Fragment() {
             }
         })
 
+        viewModel.goToListSearch.observe(this.viewLifecycleOwner, Observer { navigateToListSearch ->
+            if (navigateToListSearch == true){
+                findNavController().navigate(R.id.action_loginFragment_to_listSearchFragment)
+                viewModel.onNavigatedToListSearchCompleted()
+            }
+        })
         return binding.root
     }
 
