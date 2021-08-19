@@ -30,14 +30,14 @@
             android:inputType="textEmailAddress"
             android:padding="@dimen/emailPading"
             android:paddingStart="@dimen/emailStartPading"
-            android:text="@{loginModel.email}"
+            android:text="@={loginModel.email}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress2"
+            android:id="@+id/passwordEditText"
             style="@style/loginEditTextStyle"
             android:layout_marginTop="16dp"
             android:background="@drawable/loginedittextbacround"
@@ -45,7 +45,7 @@
             android:inputType="textPassword"
             android:padding="@dimen/emailPading"
             android:paddingStart="@dimen/emailStartPading"
-            android:text="@{loginModel.password}"
+            android:text="@={loginModel.password}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,11 +55,11 @@
             android:id="@+id/button"
             style="@style/loginEditTextStyle"
             android:layout_marginTop="24dp"
-            android:onClick="@{() -> loginViewModel.login()}"
+            android:onClick="@{() -> loginViewModel.login(loginModel.email, loginModel.password)}"
             android:text="@string/loginbuton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editTextTextEmailAddress2" />
+            app:layout_constraintTop_toBottomOf="@id/passwordEditText" />
 
         <TextView
             android:id="@+id/registerTextView"
