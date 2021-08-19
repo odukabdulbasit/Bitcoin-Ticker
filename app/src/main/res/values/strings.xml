@@ -3,4 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="loginbuton">Log In</string>
+    <string name="emailEditText">Email</string>
+    <string name="passwordEditText">Password</string>
+    <string name="registerTextViewText">Register</string>
 </resources>
