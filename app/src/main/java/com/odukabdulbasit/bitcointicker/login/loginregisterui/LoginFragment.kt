@@ -37,6 +37,7 @@ class LoginFragment : Fragment() {
 
         binding.loginModel = LoginModel()
         binding.loginViewModel = viewModel
+        binding.lifecycleOwner = this
 
         viewModel.goToRegister.observe(this.viewLifecycleOwner, Observer { navigateToRegister ->
             if (navigateToRegister == true){
