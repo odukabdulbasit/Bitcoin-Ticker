@@ -8,4 +8,5 @@
     <string name="registerTextViewText"><u>Register</u></string>
     <string name="registerbutontext">Register</string>
     <string name="search">Name or symbol</string>
+    <string name="loading">Loading</string>
 </resources>

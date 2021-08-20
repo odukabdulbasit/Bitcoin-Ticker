@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="listsearchmodel"
+            type="com.odukabdulbasit.bitcointicker.listsearch.ListSearchModel" />
+
+        <variable
+            name="clickListener"
+            type="com.odukabdulbasit.bitcointicker.listsearch.ListSearchAdapter.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primaryColor"
+        android:padding="15dp"
+        android:layout_margin="3dp">
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{listsearchmodel.name}"
+            android:textSize="18sp"
+            android:textColor="@color/primaryTextColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/symbolTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{listsearchmodel.symbol}"
+            android:textSize="17sp"
+            android:textColor="@color/primaryTextColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

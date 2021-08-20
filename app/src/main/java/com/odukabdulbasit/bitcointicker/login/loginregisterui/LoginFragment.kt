@@ -1,10 +1,10 @@
 package com.odukabdulbasit.bitcointicker.login.loginregisterui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -21,12 +21,6 @@ class LoginFragment : Fragment() {
         ViewModelProvider(this, LoginViewModel.Factory(activity.application)).get(LoginViewModel::class.java)
     }
 
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

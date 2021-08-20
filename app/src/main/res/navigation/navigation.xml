@@ -38,5 +38,10 @@
         android:id="@+id/detailFragment"
         android:name="com.odukabdulbasit.bitcointicker.detail.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail">
+
+        <argument
+            android:name="selectedCoin"
+            app:argType="com.odukabdulbasit.bitcointicker.listsearch.ListSearchModel"/>
+    </fragment>
 </navigation>

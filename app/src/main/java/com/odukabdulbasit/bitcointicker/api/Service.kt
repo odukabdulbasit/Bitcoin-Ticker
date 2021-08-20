@@ -1,6 +1,7 @@
 package com.odukabdulbasit.bitcointicker.api
 
 
+import com.odukabdulbasit.bitcointicker.listsearch.ListSearchModel
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -14,7 +15,7 @@ interface CoinApiService{
     @GET("api/v3/coins/list")
     suspend fun getCoinList(
 
-    ) : String
+    ) : List<ListSearchModel>
 }
 
 private val moshi = Moshi.Builder()

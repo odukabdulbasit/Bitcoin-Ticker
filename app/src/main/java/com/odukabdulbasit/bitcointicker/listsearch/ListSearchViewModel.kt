@@ -1,12 +1,21 @@
 package com.odukabdulbasit.bitcointicker.listsearch
 
+import android.app.Application
 import android.util.Log
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import android.widget.Toast
+import androidx.lifecycle.*
 import com.odukabdulbasit.bitcointicker.api.CoinApi
 import kotlinx.coroutines.launch
 
-class ListSearchViewModel : ViewModel(){
+class ListSearchViewModel(val application: Application) : ViewModel(){
+
+    private val _coinsIdenties = MutableLiveData<List<ListSearchModel>>()
+    val coinsIdenties: LiveData<List<ListSearchModel>>
+        get() = _coinsIdenties
+
+    private val _searchedCoinsId = MutableLiveData<ListSearchModel?>()
+    val searchedCoinsId: LiveData<ListSearchModel?>
+        get() = _searchedCoinsId
 
     init {
         getCoinList()
@@ -15,8 +24,9 @@ class ListSearchViewModel : ViewModel(){
     private fun getCoinList() {
         viewModelScope.launch {
             try {
-                var listResult = CoinApi.retrofitCoinService.getCoinList()
-                Log.i("ListSearchViewModel", "$listResult")
+                _coinsIdenties.value =  CoinApi.retrofitCoinService.getCoinList()
+                //var listResult = CoinApi.retrofitCoinService.getCoinList()
+                //Log.i("ListSearchViewModel", "${listResult[1].name}")
                 //_response.value = "Success: ${listResult.size} Coins retrieved"
             } catch (e: Exception) {
                // _response.value = "Failure: ${e.message}"
@@ -25,4 +35,26 @@ class ListSearchViewModel : ViewModel(){
         }
     }
 
+
+    fun searchingText(textToSearch: String){
+
+        val mainList = _coinsIdenties.value
+        for (i in 0..mainList!!.size.minus(1)){
+            if (mainList[i].name!!.contains(textToSearch) || mainList[i].symbol!!.contains(textToSearch) ){
+                _searchedCoinsId.value = mainList[i]
+            }else{
+                Toast.makeText(application, "Undefined value!", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    class Factory(val app: Application) : ViewModelProvider.Factory {
+        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            if (modelClass.isAssignableFrom(ListSearchViewModel::class.java)) {
+                @Suppress("UNCHECKED_CAST")
+                return ListSearchViewModel(app) as T
+            }
+            throw IllegalArgumentException("Unable to construct viewmodel")
+        }
+    }
 }

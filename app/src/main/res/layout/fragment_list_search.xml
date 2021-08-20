@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="listsearchviewmodel"
             type="com.odukabdulbasit.bitcointicker.listsearch.ListSearchViewModel" />
@@ -18,22 +19,52 @@
         <EditText
             android:id="@+id/searchEditText"
             style="@style/loginEditTextStyle"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
+            android:layout_width="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/loginedittextbacround"
             android:hint="@string/search"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/srcButtton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/coinsRecyclerView"
+            listData="@{listsearchviewmodel.coinsIdenties}"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/primaryTextColor"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/searchEditText"
+            tools:itemCount="8"
+            tools:listitem="@layout/listsearch_list_item" />
 
+        <ProgressBar
+            android:id="@+id/status_loading_wheel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            android:contentDescription="@string/loading"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/srcButtton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Search"
+            app:layout_constraintBottom_toBottomOf="@+id/searchEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/searchEditText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
