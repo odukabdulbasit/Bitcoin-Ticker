@@ -17,9 +17,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primaryColor"
+        android:background="@drawable/listi_tems_background"
         android:padding="15dp"
-        android:layout_margin="3dp">
+        android:layout_margin="2dp"
+        android:layout_marginBottom="4dp">
 
         <TextView
             android:id="@+id/nameTextView"

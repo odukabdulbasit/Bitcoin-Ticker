@@ -5,6 +5,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.*
 import com.odukabdulbasit.bitcointicker.api.CoinApi
+import com.odukabdulbasit.bitcointicker.detail.DetailModel
 import kotlinx.coroutines.launch
 
 class ListSearchViewModel(val application: Application) : ViewModel(){
@@ -16,6 +17,11 @@ class ListSearchViewModel(val application: Application) : ViewModel(){
     private val _searchedCoinsId = MutableLiveData<ListSearchModel?>()
     val searchedCoinsId: LiveData<ListSearchModel?>
         get() = _searchedCoinsId
+
+    private val _coinsDetail = MutableLiveData<DetailModel>()
+    val coinsDetail: LiveData<DetailModel>
+        get() = _coinsDetail
+
 
     init {
         getCoinList()
@@ -35,6 +41,20 @@ class ListSearchViewModel(val application: Application) : ViewModel(){
         }
     }
 
+    private fun getCoinDetail(ids : String, vs_currency : String = "usd") {
+        viewModelScope.launch {
+            try {
+                _coinsDetail.value =  CoinApi.retrofitCoinService.getCoinDetail(vs_currency, ids)[0]
+                //var listResult = CoinApi.retrofitCoinService.getCoinList()
+                Log.i("ListSearchViewModel", "succesful")
+                //_response.value = "Success: ${listResult.size} Coins retrieved"
+            } catch (e: Exception) {
+                // _response.value = "Failure: ${e.message}"
+                Log.i("ListSearchViewModel", "${e.message}")
+            }
+        }
+    }
+
 
     fun searchingText(textToSearch: String){
 
@@ -42,6 +62,7 @@ class ListSearchViewModel(val application: Application) : ViewModel(){
         for (i in 0..mainList!!.size.minus(1)){
             if (mainList[i].name!!.contains(textToSearch) || mainList[i].symbol!!.contains(textToSearch) ){
                 _searchedCoinsId.value = mainList[i]
+                getCoinDetail(mainList[i].id!!)
             }else{
                 Toast.makeText(application, "Undefined value!", Toast.LENGTH_LONG).show()
             }

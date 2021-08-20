@@ -1,14 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".detail.DetailFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <variable
+            name="detailmodel"
+            type="com.odukabdulbasit.bitcointicker.detail.DetailModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".detail.DetailFragment">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_broken_image"
+            app:imageUrl="@{detailmodel.image}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nameDetail"
+            style="@style/detailtextviewsstyle"
+            android:text="@{detailmodel.name}"
+            android:textSize="29sp"
+            app:layout_constraintBottom_toTopOf="@+id/currentPriceDetail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/currentPriceDetail"
+            style="@style/detailtextviewsstyle"
+            android:text="@{String.valueOf(detailmodel.current_price)}"
+            app:layout_constraintBottom_toTopOf="@+id/percentageDetail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/nameDetail" />
+
+        <TextView
+            android:id="@+id/percentageDetail"
+            style="@style/detailtextviewsstyle"
+            android:text="@{String.valueOf(detailmodel.price_change_percentage_24h)}"
+            app:layout_constraintBottom_toTopOf="@+id/symbolDetail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/currentPriceDetail" />
+
+        <TextView
+            android:id="@+id/symbolDetail"
+            style="@style/detailtextviewsstyle"
+            android:text="@{detailmodel.symbol}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/percentageDetail" />
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/loginEditTextStyle"
+            android:layout_marginBottom="16dp"
+            android:text="Add to Favorites"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
