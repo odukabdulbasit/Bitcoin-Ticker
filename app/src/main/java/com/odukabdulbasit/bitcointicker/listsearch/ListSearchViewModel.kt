@@ -1,4 +1,6 @@
 package com.odukabdulbasit.bitcointicker.listsearch
 
-class ListSearchViewModel {
+import androidx.lifecycle.ViewModel
+
+class ListSearchViewModel : ViewModel(){
 }
