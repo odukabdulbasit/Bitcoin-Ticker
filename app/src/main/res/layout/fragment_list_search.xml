@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="listsearchviewmodel"
+            type="com.odukabdulbasit.bitcointicker.listsearch.ListSearchViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

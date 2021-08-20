@@ -6,20 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.odukabdulbasit.bitcointicker.R
+import com.odukabdulbasit.bitcointicker.databinding.FragmentListSearchBinding
 
 class ListSearchFragment : Fragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_search, container, false)
+        val binding = FragmentListSearchBinding.inflate(inflater)
+
+        binding.listsearchviewmodel = ListSearchViewModel()
+        binding.lifecycleOwner = this
+
+        return binding.root
     }
 
 }
