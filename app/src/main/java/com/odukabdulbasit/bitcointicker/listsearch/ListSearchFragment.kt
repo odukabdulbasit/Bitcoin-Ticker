@@ -45,9 +45,9 @@ class ListSearchFragment : Fragment() {
         binding.srcButtton.setOnClickListener {
 
             if (!binding.searchEditText.text.isEmpty()){
+                binding.srcButtton.visibility = View.INVISIBLE
                 viewModel.searchingText(binding.searchEditText.text.toString())
                 binding.searchEditText.text.clear()
-                binding.srcButtton.visibility = View.INVISIBLE
             }
 
         }
