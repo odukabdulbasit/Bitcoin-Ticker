@@ -47,6 +47,7 @@ class ListSearchFragment : Fragment() {
             if (!binding.searchEditText.text.isEmpty()){
                 viewModel.searchingText(binding.searchEditText.text.toString())
                 binding.searchEditText.text.clear()
+                binding.srcButtton.visibility = View.INVISIBLE
             }
 
         }
@@ -54,7 +55,6 @@ class ListSearchFragment : Fragment() {
         viewModel.searchedCoinsId.observe(this.viewLifecycleOwner, Observer {
             //it will update the recyclerview
             adapter.submitList(listOf(it))
-            binding.srcButtton.visibility = View.INVISIBLE
         })
         return binding.root
     }

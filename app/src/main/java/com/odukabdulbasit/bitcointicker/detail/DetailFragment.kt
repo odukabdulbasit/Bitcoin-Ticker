@@ -5,6 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.odukabdulbasit.bitcointicker.databinding.FragmentDetailBinding
 
 
@@ -21,6 +24,15 @@ class DetailFragment : Fragment() {
         val coinDetail = DetailFragmentArgs.fromBundle(requireArguments()!!).selectedCoinDetail
 
         binding.detailmodel = coinDetail
+
+        val firebaseAuth = FirebaseAuth.getInstance()
+
+        val database = Firebase.database
+        val myRef = database.getReference("Users")
+
+        binding.addToFavories.setOnClickListener {
+            myRef.child(firebaseAuth.currentUser!!.uid).child("Favorities").push().setValue(coinDetail)
+        }
 
         return binding.root
     }
