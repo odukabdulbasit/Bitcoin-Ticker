@@ -29,6 +29,7 @@
         <TextView
             android:id="@+id/nameDetail"
             style="@style/detailtextviewsstyle"
+            android:layout_marginStart="8dp"
             android:text="@{detailmodel.name}"
             android:textSize="29sp"
             app:layout_constraintBottom_toTopOf="@+id/currentPriceDetail"
@@ -40,6 +41,7 @@
         <TextView
             android:id="@+id/currentPriceDetail"
             style="@style/detailtextviewsstyle"
+            android:layout_marginStart="8dp"
             android:text="@{String.valueOf(detailmodel.current_price)}"
             app:layout_constraintBottom_toTopOf="@+id/percentageDetail"
             app:layout_constraintEnd_toEndOf="parent"
@@ -50,6 +52,7 @@
         <TextView
             android:id="@+id/percentageDetail"
             style="@style/detailtextviewsstyle"
+            android:layout_marginStart="8dp"
             android:text="@{String.valueOf(detailmodel.price_change_percentage_24h)}"
             app:layout_constraintBottom_toTopOf="@+id/symbolDetail"
             app:layout_constraintEnd_toEndOf="parent"
@@ -60,6 +63,7 @@
         <TextView
             android:id="@+id/symbolDetail"
             style="@style/detailtextviewsstyle"
+            android:layout_marginStart="8dp"
             android:text="@{detailmodel.symbol}"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
